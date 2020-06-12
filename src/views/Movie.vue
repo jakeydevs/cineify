@@ -57,7 +57,7 @@
 					<div class="bg-indigo-100 w-full rounded-md p-3 text-indigo-700 truncate">
 						{{ state }}
 					</div>
-					<div id="slot"></div>
+					<iframe src="https://instant.io/#magnet%3A%3Fxt%3Durn%3Abtih%3AB06F3FE30F3ACD5511322AA0A8E863391BABE0D1%26dn%3DScoob%2521%2B%25282020%2529%2B%255B720p%255D%2B%255BYTS.MX%255D%26tr%3Dudp%253A%252F%252Fglotorrents.pw%253A6969%252Fannounce%26tr%3Dudp%253A%252F%252Ftracker.openbittorrent.com%253A80%26tr%3Dudp%253A%252F%252Ftracker.coppersurfer.tk%253A6969%26tr%3Dudp%253A%252F%252Fp4p.arenabg.ch%253A1337%26tr%3Dudp%253A%252F%252Ftracker.internetwarriors.net%253A1337"></iframe>
 				</div>
 			</div>
 		</div>
@@ -85,19 +85,19 @@
 			return {
 				state: 'Init system',
 				trackers: [
-				'udp://open.demonii.com:1337/announce',
-				'udp://tracker.openbittorrent.com:80',
-				'udp://tracker.coppersurfer.tk:6969',
-				'udp://glotorrents.pw:6969/announce',
-				'udp://tracker.opentrackr.org:1337/announce',
-				'udp://torrent.gresille.org:80/announce',
-				'udp://p4p.arenabg.com:1337',
-				'udp://tracker.leechers-paradise.org:6969',
-				'udp://tracker.internetwarriors.net:1337',
-				'udp://p4p.arenabg.ch:1337',
-				'udp://tracker.coppersurfer.tk:6969',
-				'udp://tracker.openbittorrent.com:80',
-				'udp://glotorrents.pw:6969/announce'
+					'udp://open.demonii.com:1337/announce',
+					'udp://tracker.openbittorrent.com:80',
+					'udp://tracker.coppersurfer.tk:6969',
+					'udp://glotorrents.pw:6969/announce',
+					'udp://tracker.opentrackr.org:1337/announce',
+					'udp://torrent.gresille.org:80/announce',
+					'udp://p4p.arenabg.com:1337',
+					'udp://tracker.leechers-paradise.org:6969',
+					'udp://tracker.internetwarriors.net:1337',
+					'udp://p4p.arenabg.ch:1337',
+					'udp://tracker.coppersurfer.tk:6969',
+					'udp://tracker.openbittorrent.com:80',
+					'udp://glotorrents.pw:6969/announce'
 				],
 				torrent: {},
 
@@ -113,7 +113,8 @@
 			this.movie.torrents.forEach((torrent) => {
 				if (torrent.quality == "720p") { this.torrent = torrent }
 			})
-			this.createWebTorrent()			
+			// this.createWebTorrent()		
+			this.createMagnet()	
 		},
 
 		methods: {
@@ -130,8 +131,8 @@
 					magnet += "&tr="+encodeURIComponent(t)
 				})
 
-				// return 'https://webtorrent.io/torrents/sintel.torrent'
-				return "magnet:?xt=urn:btih:584CB082CB19D81DBABE3E201D89976459D495EA&dn=black-panther-2018&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftorrent.gresille.org%3A80%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337&tr=udp%3A%2F%2Fp4p.arenabg.ch%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce"
+				console.log(magnet)
+				return magnet
 			},
 
 			startDownload () 

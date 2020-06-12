@@ -10,7 +10,9 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    scale: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+  },
   plugins: [
     require('@tailwindcss/ui'),
   ]

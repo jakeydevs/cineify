@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="grid grid-row gap-8 py-16">
+		<div class="grid grid-row gap-8 pb-16">
 			<div>
 				<div>
 					<div class="mt-1 relative rounded-md shadow-sm">
@@ -18,24 +18,24 @@
 						placeholder="Search for a movie here" 
 						/>
 					</div>
-				</div>
-
-
-			</div>
-
-			<section name="search">
-				<div class="flex justify-end items-center">
-					<div class="max-w-lg rounded-md shadow-sm sm:max-w-xs">
-						<select id="country" class="block form-select w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" v-model="sort" @change="sortChanged">
-							<option value="peers">Seeds: High</option>
-							<option value="date_added">Date Added: Latest</option>
-							<option value="rating">Rating: High</option>
-							<option value="download_count">Downloaded: High</option>
-						</select>
+					<div class="flex justify-between items-center mt-4">
+						<div>
+							<p class="text-sm py-3">
+								Powered by <a href='https://yts.mx/' class='text-green-500'>YIFY Torrents</a>
+							</p>
+						</div>
+						<div class="max-w-lg rounded-md shadow-sm sm:max-w-xs">
+							<select id="country" class="block form-select w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" v-model="sort" @change="sortChanged">
+								<option value="peers">Seeds: High</option>
+								<option value="date_added">Date Added: Latest</option>
+								<option value="rating">Rating: High</option>
+								<option value="download_count">Downloaded: High</option>
+							</select>
+						</div>
 					</div>
+					
 				</div>
-			</section>
-			
+			</div>		
 
 			<section name="movie-list">
 
